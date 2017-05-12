@@ -1,0 +1,18 @@
+/* global jQuery Share */
+
+// Bootstrap all JS
+(function($, Share) {
+    'use strict';
+
+    $(function() {
+        // Global Mediator for Components
+        Share.Mediator = new Share.Utils.EventEmitter();
+
+        // Media Query utility
+        Share.Utils.DeviceState.init('micro');
+
+        // Initialise the components from the component directory
+        Share.Utils.Initialiser.init(Share.Component, AppName.Config.Share, 'SV');
+    });
+})(jQuery, Share);
+

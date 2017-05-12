@@ -1,0 +1,7 @@
+{
+    "autoprefixer": {
+        "browsers": ["not ie <= 9","> 1%"],
+        "cascade": false,
+        "flexbox": "no-2009"
+    }
+}

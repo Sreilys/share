@@ -1,0 +1,21 @@
+{
+  "name": "my-shared-fe-pkg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sabrina",
+  "license": "ISC",
+  "dependencies": {
+    "bourbon-neat": "^2.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.0.1",
+    "node-sass": "^4.5.2"
+  },
+  "scripts": {
+  	"css": "./node_modules/node-sass/bin/node-sass src/scss/main.scss --output-style --output dist/css/"
+  }
+}

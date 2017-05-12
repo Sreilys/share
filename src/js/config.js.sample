@@ -1,0 +1,29 @@
+// Component config
+
+this.AppName = this.AppName || {};
+this.AppName.Config = {
+    // Share components
+    Share: {
+        NameOfComponent: {
+          key: value,
+          key: value
+        },
+        NameOfComponent: {
+          namespace: {
+            key: value,
+            key: value
+          },
+          namespace: {
+            key: value,
+            key: value
+          }
+        }
+    },
+    // AppName components
+    AppName: {
+        NameOfComponent: {
+          key: value,
+          key: value
+        }
+    }
+};

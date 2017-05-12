@@ -1,0 +1,22 @@
+/*
+ * Aria Accessible Tabs
+ *
+ */
+
+.c-tabs {
+    .js &__content-item[aria-hidden=true] {
+        display: none;
+    }
+}
+
+// default theme (optional) for when tabs are off
+
+.c-tabs--off {
+    .c-tabs__list {
+        display: none;
+    }
+
+    .c-tabs__content-item {
+        margin: spacing(0, 0, 16);
+    }
+}

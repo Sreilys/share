@@ -1,0 +1,81 @@
+/* global jQuery Share */
+
+/*
+ * Name of Component
+ * Description of what this component does
+ */
+
+this.Share = this.Share || {};
+this.Share.Component = this.Share.Component || {};
+this.Share.Component.NameOfComponent = (function ($) {
+    'use strict';
+
+    var NAME_OF_FIXED_VAR = 'value';
+
+    var DEFAULT_OPTIONS = {};
+
+    /* Private Functions */
+    /* ================= */
+
+    /**
+     * Setup
+     * Create an object to represent this component instance
+     * @param {object} $el - reference to the component
+     * @param {string} name - the name of the component
+     * @param {object} opts - setup options for this component
+     * @return {object} instance - settings for this instance
+     */
+    var setup = function ($el, name, opts) {
+        var instance = $.extend({}, DEFAULT_OPTIONS, opts);
+        instance.name = name;
+        instance.componentName = name.split('.')[0];
+        instance.componentNamespace = name.split('.')[1];
+        instance.$el = $el;
+        return instance;
+    };
+
+    /* Public Methods */
+    /* ================= */
+
+    var self = {
+        /**
+         * Public method
+         */
+        methodName: function (instance) {
+        },
+
+        /**
+         * Initialise
+         * @param {object} $el - reference to the component
+         * @param {string} name - the name of the component
+         * @param {object} opts - setup options for this component
+         */
+        init: function ($el, name, opts) {
+            var instance = setup($el, name, opts);
+
+            // call a public method
+            self.methodName(instance);
+
+            // publish an event
+            $el.on('click', function () {
+                Share.Mediator.emit(name, 'click', 'first', 'second');
+            });
+
+            // listen for the above event and log arguments
+            // any component can listen to events from any other component
+            Share.Mediator.on('componentName:click', function (arg1, arg2, ...) {
+            });
+
+            // listen for a namespaced event
+            Share.Mediator.on('componentName.componentNamespace:click', function (arg1, arg2, ...) {
+            });
+
+            // unpublish an event
+            $el.on('click', function () {
+                Share.Mediator.off('componentName:click');
+            });
+        }
+    };
+
+    return self;
+})(jQuery);

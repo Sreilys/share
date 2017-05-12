@@ -1,0 +1,23 @@
+/**
+ * Added to basic stylesheet
+ * For Grade A experience
+ *
+ */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    -moz-osx-font-smoothing: auto;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+// tabindex on sections/aside make these highlighted on focus
+
+section,
+aside {
+    &:focus {
+        outline: 0;
+    }
+}
